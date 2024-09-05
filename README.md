@@ -3,29 +3,24 @@
 ### Organisation: J Group Consulting
 This Script is designed to Create a CyberArk safe into Privilege Cloud & Assign Roles with specific permissions as well as create a new User Role in Identity to then assign the End User into.
 
-# Requirements
-    ```
-    API Account:
-    1. Need a CyberArk API onboarding service user account
-    2. API service user requires the following account permissions:
-    - [x] Is service user
-    - [x] Is OAuth confidential Client
-    3. Needs the following CyberArk Roles
-    - [x] System Administrator
-    - [x] Privilege Cloud Administrators
-    - [x] Create a New Role Called "API Users" and add to the "Administrative Rights" Read Only User Management & User Management 
-    - [x] Assign the new API user to the API Users role
-    4. Ensure that Privilege Cloud Administrators is member of current safes for validation.
+## Requirements
+# API Account:
+1. Need a CyberArk API onboarding service user account
+2. API service user requires the following account permissions:
+    - [ ] Is service user
+    - [ ] Is OAuth confidential Client
+3. Needs the following CyberArk Roles
+    - [ ] System Administrator
+    - [ ] Privilege Cloud Administrators
+    - [ ] Create a New Role Called "API Users" and add to the "Administrative Rights" Read Only User Management & User Management 
+    - [ ] Assign the new API user to the API Users role
+4. Ensure that Privilege Cloud Administrators is member of current safes for validation.
 
-   
-    ```
+# Enviroment:
+1. Tenant ID Value
+2. Subdomain Value
+3. CPM Name
 
-    ```
-    Enviroment:
-    1. Tenant ID Value
-    2. Subdomain Value
-    3. CPM Name
-    ```
 
 # Installation
 1. There are two options, you can 1) clone the repo or, 2) copy the connector-diff.ps1 script directly from here.
