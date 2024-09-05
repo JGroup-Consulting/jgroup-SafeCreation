@@ -17,12 +17,14 @@ This Script is designed to Create a CyberArk safe into Privilege Cloud & Assign 
     - [x] Assign the new API user to the API Users role
     4. Ensure that Privilege Cloud Administrators is member of current safes for validation.
 
+   
+    ```
+
+    ```
     Enviroment:
     1. Tenant ID Value
     2. Subdomain Value
     3. CPM Name
-
-    
     ```
 
 # Installation
