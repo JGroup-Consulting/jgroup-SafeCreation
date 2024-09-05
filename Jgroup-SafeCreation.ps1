@@ -19,13 +19,14 @@
 #TO BE UPDATED PER CLIENT
 $tenantID = 'ABA4130'
 $subdomain = 'jgroup'
-$client_id = [uri]::EscapeDataString("api_onboarding_user@jgroupconsulting.com.au")
+$api_user = 'api_onboarding_user@jgroupconsulting.com.au'
 $client_secret = $Env:cyberark_secret
 $CPM = 'CONNECTOR01'
 
 #Standard Priv Cloud URLs please verify before use.
 $auth_url = "https://$tenantID.id.cyberark.cloud/oauth2/platformtoken"
 $api_url = "https://$subdomain.privilegecloud.cyberark.cloud/PasswordVault/api"
+$client_id = [uri]::EscapeDataString($api_user)
 $tenant_api_url = "https://$subdomain.id.cyberark.cloud"
 
 if ($client_secret.length -eq 0) {
@@ -194,6 +195,7 @@ if ($safeList -contains $safeName) {
         "specifyNextAccountContent" = $true
     }
 
+    #Individually add Safe Members just incase any failures.
     Add-SafeMember -safeName $safeName -memberName "Privilege Cloud Administrators" -memberType "Role" -permissions $permissionsAdmin -bearerToken $bearer_token
     Add-SafeMember -safeName $safeName -memberName "Privilege Cloud Auditors" -memberType "Role" -permissions $permissionsAuditor -bearerToken $bearer_token
     Add-SafeMember -safeName $safeName -memberName $roleName -memberType "Role" -permissions $permissionsUser -bearerToken $bearer_token
