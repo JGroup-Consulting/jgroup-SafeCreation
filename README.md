@@ -21,24 +21,7 @@ This Script is designed to Create a CyberArk safe into Privilege Cloud & Assign 
 2. Subdomain Value
 3. CPM Name
 
-
-# Installation
-1. There are two options, you can 1) clone the repo or, 2) copy the connector-diff.ps1 script directly from here.
-
-### Cloning the repo to your workstation
-1. Install git
-
-2. Configure your user details in your git client, you may be asked to sign in to git using your Github account the first time you set this up.
-In your CLI run these commands:
-    ```
-    git config --global user.email "<youremail@jgroupconsulting.com.au>"
-    git config --global user.name "<username>"
-    ```
-
-3. Open a shell and run this command to clone the repo.
-    ```
-    git clone https://github.com/JGroup-Consulting/jgroup-SafeCreation.git
-    ```
+Update The Client Variables in the Script before running
 
 # Usage
 ### Workflow
@@ -54,7 +37,7 @@ Enter the name of the safe to create:
 Enter the description of the safe: 
 ```
 
-3. New Role is created with the following format "SAFENAME_Usr"
+3. New Role is created in CyberArk Identity with the following format "SAFENAME_Usr"
 
 
 4. New Role, Privilege Cloud Administrators & Privilege Cloud Auditors are all addeed to the safe with permissions set
@@ -64,10 +47,12 @@ Enter the description of the safe:
 
 
 6. Verfication
-```
-Enter the name of the safe to create:
-Enter the description of the safe: 
-```
-# Todo
-If people like this tool, and it gets used, we can look to add these features.
-- [ ] 
+    ```
+    1. Check the log.txt output for any errors
+    2. Verify that the Safe was created in Privilege Cloud
+    3. Verify the Roles are added to the safe
+    4. Verify the permissions for each role are correct
+    5. Verify in CyberArk Identity > Roles that there is a new role = SAFENAME_Usr
+
+    ```
+7. Next steps - add the revelent users that need to use the accounts in the safe to the new User role
