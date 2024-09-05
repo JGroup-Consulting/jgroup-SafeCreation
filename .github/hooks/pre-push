@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+# Prevent the creation of branches not following the required format.
+# Formats:
+# - Feature: feature/jgroup-<ticket-number>-<feature-description>-au
+# - Bugfix: bugfix/jgroup-<bug-description>-au
+# - Hotfix: hotfix/jgroup-<hotfix-description>-au
+# - Release: release/jgroup-release<version-number>-au
+
+zero_commit="0000000000000000000000000000000000000000"
+
+# Define the regex pattern for branch naming
+match_pattern="^refs/heads/(feature|bugfix|hotfix)/jgroup-[a-zA-Z0-9]+-[^-]+-au$|^refs/heads/release/jgroup-release[0-9]+(\.[0-9]+){3}-au$"
+
+while read oldrev newrev refname; do
+  # Only check new branches ($oldrev is zero commit), don't block tags
+  if [[ $oldrev == $zero_commit && $refname =~ ^refs/heads/ ]]; then
+    if [[ ! $refname =~ $match_pattern ]]; then
+      echo "ERROR: New branch creation failed because it does not follow the required naming convention."
+      echo "Please use one of the following formats:"
+      echo "- Feature branch: feature/jgroup-<ticket-number>-<feature-description>-au"
+      echo "  Example: feature/jgroup-123-login-validation-au"
+      echo "- Bugfix branch: bugfix/jgroup-<bug-description>-au"
+      echo "  Example: bugfix/jgroup-fix-login-issue-au"
+      echo "- Hotfix branch: hotfix/jgroup-<hotfix-description>-au"
+      echo "  Example: hotfix/jgroup-security-patch-au"
+      echo "- Release branch: release/jgroup-release<version-number>-au"
+      echo "  Example: release/jgroup-release24.0.0.0-au"
+      exit 1
+    fi
+  fi
+done
+
+exit 0

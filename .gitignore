@@ -1,0 +1,19 @@
+# Allowlisting gitignore template for projects, prevents us.
+# from adding various unwanted local files, such as generated
+# files, developer configurations or IDE-specific-files etc.
+#
+#Récommended: Go.AllowList.gitignore
+#Ignore everything
+*
+# But not these files..
+!/.gitignore
+!Dockerfile
+!README.md
+!LICENSE
+!.github/*
+*report*
+*.csv
+# !Makefile
+.idea
+#...even if they are in subdirectories
+!*/
