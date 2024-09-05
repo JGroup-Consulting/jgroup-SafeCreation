@@ -22,29 +22,28 @@ In your CLI run these commands:
 
 # Usage
 ### Workflow
-1. Copy the script to the computer you want to gather a list of checksums from.
 
-2. Run the scipt, and pass the password.
+1. Run the scipt, and pass the password.
 ```
 .\Jgroup-SafeCreation.ps1 -$Env:cyberark_secret *PASSWORD*
 ```
 
-3. Prompted to enter Safe name & description
+2. Prompted to enter Safe name & description
 ```
 Enter the name of the safe to create:
 Enter the description of the safe: 
 ```
 
-4. New Role is created with the following format "SAFENAME_Usr"
+3. New Role is created with the following format "SAFENAME_Usr"
 
 
-5. New Role, Privilege Cloud Administrators & Privilege Cloud Auditors are all addeed to the safe with permissions set
+4. New Role, Privilege Cloud Administrators & Privilege Cloud Auditors are all addeed to the safe with permissions set
 
 
-6. All actions are logged into a "log.txt"
+5. All actions are logged into a "log.txt"
 
 
-7. Verfication
+6. Verfication
 ```
 Enter the name of the safe to create:
 Enter the description of the safe: 
