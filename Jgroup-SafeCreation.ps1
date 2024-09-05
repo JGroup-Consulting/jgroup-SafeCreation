@@ -16,12 +16,17 @@
 #>
 
 # 1. ---- Client variables ----#
-$auth_url = 'https://ABA4130.id.cyberark.cloud/oauth2/platformtoken'
-$api_url = 'https://jgroup.privilegecloud.cyberark.cloud/PasswordVault/api'
-$tenant_api_url = 'https://jgroup.id.cyberark.cloud'
+#TO BE UPDATED PER CLIENT
+$tenantID = 'ABA4130'
+$subdomain = 'jgroup'
 $client_id = [uri]::EscapeDataString("api_onboarding_user@jgroupconsulting.com.au")
-$client_secret = 'Roving-Epidural-Halved1'
+$client_secret = $Env:cyberark_secret
 $CPM = 'CONNECTOR01'
+
+#Standard Priv Cloud URLs please verify before use.
+$auth_url = "https://$tenantID.id.cyberark.cloud/oauth2/platformtoken"
+$api_url = "https://$subdomain.privilegecloud.cyberark.cloud/PasswordVault/api"
+$tenant_api_url = "https://$subdomain.id.cyberark.cloud"
 
 if ($client_secret.length -eq 0) {
     Throw "Client Secret not defined in env variable, please set `$Env:cyberark_secret"
@@ -151,6 +156,7 @@ if ($safeList -contains $safeName) {
     $roleName = $safeName +'_Usr'
     Create-UserRole -roleName $roleName -bearerToken $bearer_token
 
+    #Permission sets for the safe
     $permissionsAdmin = @{
         "listAccounts" = $true
         "addAccounts" = $true
