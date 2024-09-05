@@ -24,9 +24,9 @@ In your CLI run these commands:
 ### Workflow
 1. Copy the script to the computer you want to gather a list of checksums from.
 
-2. Run the scipt, no arguments are needed.
+2. Run the scipt, and pass the password.
 ```
-.\Jgroup-SafeCreation.ps1
+.\Jgroup-SafeCreation.ps1 -$Env:cyberark_secret *PASSWORD*
 ```
 
 3. Prompted to enter Safe name & description
