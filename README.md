@@ -4,7 +4,7 @@
 This Script is designed to Create a CyberArk safe into Privilege Cloud & Assign Roles with specific permissions as well as create a new User Role in Identity to then assign the End User into.
 
 ## Requirements
-# API Account:
+### API Account:
 1. Need a CyberArk API onboarding service user account
 2. API service user requires the following account permissions:
     - [ ] Is service user
@@ -16,7 +16,7 @@ This Script is designed to Create a CyberArk safe into Privilege Cloud & Assign 
     - [ ] Assign the new API user to the API Users role
 4. Ensure that Privilege Cloud Administrators is member of current safes for validation.
 
-# Enviroment:
+### Enviroment:
 1. Tenant ID Value
 2. Subdomain Value
 3. CPM Name
