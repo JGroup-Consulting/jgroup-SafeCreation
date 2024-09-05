@@ -53,6 +53,6 @@ Enter the description of the safe:
     3. Verify the Roles are added to the safe
     4. Verify the permissions for each role are correct
     5. Verify in CyberArk Identity > Roles that there is a new role = SAFENAME_Usr
-
     ```
+    
 7. Next steps - add the revelent users that need to use the accounts in the safe to the new User role
