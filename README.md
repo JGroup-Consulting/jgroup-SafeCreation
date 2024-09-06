@@ -26,27 +26,25 @@ Update The Client Variables in the Script before running
 # Usage
 ### Workflow
 
-1. Run the scipt, and pass the password.
+1. Download the Script
+2. Open a Terminal in the relevent location as the script
+3. Set the password for the API User using the Variable
 ```
-.\Jgroup-SafeCreation.ps1 -$Env:cyberark_secret *PASSWORD*
+$Env:cyberark_secret = "PASSWORD"
+```  
+4. Run the scipt.
 ```
-
-2. Prompted to enter Safe name & description
+.\Jgroup-SafeCreation.ps1
+```
+5. Prompted to enter Safe name & description
 ```
 Enter the name of the safe to create:
 Enter the description of the safe: 
 ```
-
-3. New Role is created in CyberArk Identity with the following format "SAFENAME_Usr"
-
-
-4. New Role, Privilege Cloud Administrators & Privilege Cloud Auditors are all addeed to the safe with permissions set
-
-
-5. All actions are logged into a "log.txt"
-
-
-6. Verfication
+6. New Role is created in CyberArk Identity with the following format "SAFENAME_Usr"
+7. New Role, Privilege Cloud Administrators & Privilege Cloud Auditors are all addeed to the safe with permissions set
+8. All actions are logged into a "log.txt"
+9. Verfication
     ```
     1. Check the log.txt output for any errors
     2. Verify that the Safe was created in Privilege Cloud
@@ -55,4 +53,4 @@ Enter the description of the safe:
     5. Verify in CyberArk Identity > Roles that there is a new role = SAFENAME_Usr
     ```
     
-7. Next steps - add the revelent users that need to use the accounts in the safe to the new User role
+7. Next steps - add the revelent users that need to use the accounts in the safe to the new User role manually in the PVWA
